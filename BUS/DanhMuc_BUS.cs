@@ -30,5 +30,17 @@ namespace NATO.BUS
         {
             return DanhMuc_DAO.Instance.getAllDanhMuc();
         }
+
+        public int getIndexOfDanhMuc(string maDM)
+        {
+            List<DanhMuc_DTO> lst = new List<DanhMuc_DTO>();
+            lst = getAllDanhMuc();
+            foreach(DanhMuc_DTO dm in lst)
+            {
+                if (maDM.Equals(dm.MaDM))
+                    return lst.IndexOf(dm);
+            }
+            return -1;
+        }
     }
 }

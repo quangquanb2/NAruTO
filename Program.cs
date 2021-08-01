@@ -4,6 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using NATO.GUI;
+using NATO.DAO;
+using NATO.BUS;
+using NATO.DTO;
 
 namespace NATO
 {
@@ -17,7 +20,8 @@ namespace NATO
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            Application.Run(new ThemMatHang());
+            
         }
     }
 }

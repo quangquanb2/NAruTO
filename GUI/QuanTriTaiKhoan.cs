@@ -20,7 +20,7 @@ namespace NATO.GUI
         private void QuanTriTaiKhoan_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'kLMQSDataSet1.TAIKHOAN' table. You can move, or remove it, as needed.
-            this.tAIKHOANTableAdapter.Fill(this.kLMQSDataSet1.TAIKHOAN);
+            // this.tAIKHOANTableAdapter.Fill(this.kLMQSDataSet1.TAIKHOAN);
 
         }
     }

@@ -74,6 +74,7 @@ namespace NATO.GUI
             int sl = Int16.Parse(txtSL.Text.ToString());
             string mss = this.MaSP;
             bool kq = GioHang_BUS.Instance.themGioHang(this.Username, mss, sl);
+
             string message = kq == true ? "Thêm giỏ hành thành công" : "Thất bại";
             MessageBox.Show(message);
         }

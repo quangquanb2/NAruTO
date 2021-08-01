@@ -22,7 +22,7 @@ namespace NATO.DAO
             }
         }
 
-        string cs = @"Data Source=DESKTOP-ADHIDMQ\SQLEXPRESS;Initial Catalog=KLMQS;Integrated Security=True";
+        string cs = @"Data Source=TUAASNKHOOI\SQLEXPRESS03;Initial Catalog=test_QQ;Integrated Security=True";
 
         public TaiKhoan_DTO getTaiKhoan(string username)
         {

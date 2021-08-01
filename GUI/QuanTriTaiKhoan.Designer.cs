@@ -30,14 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hoTenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sDTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.diaChiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gioiTinhDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.quocTichDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isAdminDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tAIKHOANBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kLMQSDataSet1 = new NATO.KLMQSDataSet1();
             this.button1 = new System.Windows.Forms.Button();
@@ -54,76 +46,12 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.usernameDataGridViewTextBoxColumn,
-            this.hoTenDataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn,
-            this.sDTDataGridViewTextBoxColumn,
-            this.diaChiDataGridViewTextBoxColumn,
-            this.gioiTinhDataGridViewCheckBoxColumn,
-            this.quocTichDataGridViewTextBoxColumn,
-            this.isAdminDataGridViewCheckBoxColumn});
-            this.dataGridView1.DataSource = this.tAIKHOANBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 65);
+            this.dataGridView1.Location = new System.Drawing.Point(16, 80);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1240, 604);
+            this.dataGridView1.Size = new System.Drawing.Size(1653, 743);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // usernameDataGridViewTextBoxColumn
-            // 
-            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "Username";
-            this.usernameDataGridViewTextBoxColumn.HeaderText = "Username";
-            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
-            this.usernameDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // hoTenDataGridViewTextBoxColumn
-            // 
-            this.hoTenDataGridViewTextBoxColumn.DataPropertyName = "HoTen";
-            this.hoTenDataGridViewTextBoxColumn.HeaderText = "HoTen";
-            this.hoTenDataGridViewTextBoxColumn.Name = "hoTenDataGridViewTextBoxColumn";
-            this.hoTenDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // sDTDataGridViewTextBoxColumn
-            // 
-            this.sDTDataGridViewTextBoxColumn.DataPropertyName = "SDT";
-            this.sDTDataGridViewTextBoxColumn.HeaderText = "SDT";
-            this.sDTDataGridViewTextBoxColumn.Name = "sDTDataGridViewTextBoxColumn";
-            this.sDTDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // diaChiDataGridViewTextBoxColumn
-            // 
-            this.diaChiDataGridViewTextBoxColumn.DataPropertyName = "DiaChi";
-            this.diaChiDataGridViewTextBoxColumn.HeaderText = "DiaChi";
-            this.diaChiDataGridViewTextBoxColumn.Name = "diaChiDataGridViewTextBoxColumn";
-            this.diaChiDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // gioiTinhDataGridViewCheckBoxColumn
-            // 
-            this.gioiTinhDataGridViewCheckBoxColumn.DataPropertyName = "GioiTinh";
-            this.gioiTinhDataGridViewCheckBoxColumn.HeaderText = "GioiTinh";
-            this.gioiTinhDataGridViewCheckBoxColumn.Name = "gioiTinhDataGridViewCheckBoxColumn";
-            // 
-            // quocTichDataGridViewTextBoxColumn
-            // 
-            this.quocTichDataGridViewTextBoxColumn.DataPropertyName = "QuocTich";
-            this.quocTichDataGridViewTextBoxColumn.HeaderText = "QuocTich";
-            this.quocTichDataGridViewTextBoxColumn.Name = "quocTichDataGridViewTextBoxColumn";
-            this.quocTichDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // isAdminDataGridViewCheckBoxColumn
-            // 
-            this.isAdminDataGridViewCheckBoxColumn.DataPropertyName = "IsAdmin";
-            this.isAdminDataGridViewCheckBoxColumn.HeaderText = "IsAdmin";
-            this.isAdminDataGridViewCheckBoxColumn.Name = "isAdminDataGridViewCheckBoxColumn";
             // 
             // tAIKHOANBindingSource
             // 
@@ -138,9 +66,10 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(263, 15);
+            this.button1.Location = new System.Drawing.Point(351, 18);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(116, 35);
+            this.button1.Size = new System.Drawing.Size(155, 43);
             this.button1.TabIndex = 1;
             this.button1.Text = "Tìm Kiếm";
             this.button1.UseVisualStyleBackColor = true;
@@ -148,10 +77,11 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(12, 15);
+            this.textBox1.Location = new System.Drawing.Point(16, 18);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(245, 35);
+            this.textBox1.Size = new System.Drawing.Size(325, 42);
             this.textBox1.TabIndex = 2;
             // 
             // kLMQSDataSet
@@ -170,12 +100,13 @@
             // 
             // QuanTriTaiKhoan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.ClientSize = new System.Drawing.Size(1685, 838);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "QuanTriTaiKhoan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QuanTriTaiKhoan";
@@ -200,13 +131,5 @@
         private KLMQSDataSet1 kLMQSDataSet1;
         private System.Windows.Forms.BindingSource tAIKHOANBindingSource;
         private KLMQSDataSet1TableAdapters.TAIKHOANTableAdapter tAIKHOANTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hoTenDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sDTDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn diaChiDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn gioiTinhDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quocTichDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn isAdminDataGridViewCheckBoxColumn;
     }
 }

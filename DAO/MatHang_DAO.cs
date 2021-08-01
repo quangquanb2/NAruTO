@@ -22,7 +22,7 @@ namespace NATO.DAO
             }
         }
 
-        string cs = @"Data Source=DESKTOP-ADHIDMQ\SQLEXPRESS;Initial Catalog=KLMQS;Integrated Security=True";
+        string cs = @"Data Source=TUAASNKHOOI\SQLEXPRESS03;Initial Catalog=test_QQ;Integrated Security=True";
 
         public List<MatHang_DTO> searchMatHang(string str)
         {
@@ -101,7 +101,6 @@ namespace NATO.DAO
 
         public bool themmatHang(MatHang_DTO mh)
         {
-            string cs = @"Data Source=DESKTOP-ADHIDMQ\SQLEXPRESS;Initial Catalog=KLMQS;Integrated Security=True";
             try
             {
                 using (SqlConnection con = new SqlConnection(cs))
@@ -159,6 +158,79 @@ namespace NATO.DAO
                 mhs.Add(mh);
             }
             return mhs;
+        }
+
+        public MatHang_DTO getMHbyMaMH(string maMH)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(cs))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = con;
+
+                    cmd.CommandText = "SELECT * FROM MATHANG WHERE MaHang=@m";
+                    cmd.Parameters.Add("@m", SqlDbType.NVarChar).Value = maMH;
+                    SqlDataReader drd = cmd.ExecuteReader();
+                    MatHang_DTO mh = new MatHang_DTO();
+                    while (drd.Read())
+                    {
+                        mh.MaHang = drd["MaHang"].ToString();
+                        mh.TenHang = drd["TenHang"].ToString();
+                        mh.SoLuong = Convert.ToInt16(drd["SoLuong"].ToString());
+                        mh.HinhAnh = drd["HinhAnh"].ToString();
+                        mh.Gia = float.Parse(drd["Gia"].ToString());
+                        mh.MoTa = drd["MoTa"].ToString();
+                        mh.MaDM = drd["MaDanhMuc"].ToString();
+                    }
+                    return mh;
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public bool capNhatMH(string maMH, MatHang_DTO mh)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(cs))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = con;
+                    
+                    string tenhang = mh.TenHang;
+                    int sl = mh.SoLuong;
+                    string hinhanh = mh.HinhAnh;
+                    float gia = mh.Gia;
+                    string mota = mh.MoTa;
+                    string madm = mh.MaDM;
+
+                    cmd.CommandText = "UPDATE MATHANG SET TenHang=@th, SoLuong=@sl, HinhAnh=@h, Gia=@g, MoTa=@mt, MaDanhMuc=@mdm WHERE MaHang=@ma";
+                    cmd.Parameters.Add("@th", SqlDbType.NVarChar).Value = tenhang;
+                    cmd.Parameters.Add("@sl", SqlDbType.Int).Value = sl;
+                    cmd.Parameters.Add("@h", SqlDbType.NVarChar).Value = hinhanh;
+                    cmd.Parameters.Add("@g", SqlDbType.Float).Value = gia;
+                    cmd.Parameters.Add("@mt", SqlDbType.NVarChar).Value = mota;
+                    cmd.Parameters.Add("@mdm", SqlDbType.NVarChar).Value = madm;
+                    cmd.Parameters.Add("@ma", SqlDbType.NVarChar).Value = maMH;
+
+                    int eff = cmd.ExecuteNonQuery();
+                    if (eff == 1)
+                        return true;
+                    else
+                        return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Connect failed");
+                return false;
+            }
         }
     }
 }

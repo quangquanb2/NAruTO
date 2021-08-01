@@ -23,7 +23,7 @@ namespace NATO.DAO
 
         public bool login(string username, string password)
         {
-            string cs = @"Data Source=DESKTOP-ADHIDMQ\SQLEXPRESS;Initial Catalog=KLMQS;Integrated Security=True";
+            string cs = @"Data Source=TUAASNKHOOI\SQLEXPRESS03;Initial Catalog=test_QQ;Integrated Security=True";
             try
             {
                 using (SqlConnection con = new SqlConnection(cs))

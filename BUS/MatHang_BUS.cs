@@ -40,5 +40,15 @@ namespace NATO.BUS
         {
             return MatHang_DAO.Instance.searchMatHang(str);
         }
+
+        public MatHang_DTO getMHbyMaMH(string maMH)
+        {
+            return MatHang_DAO.Instance.getMHbyMaMH(maMH);
+        }
+
+        public bool capNhatMH(string maMH, MatHang_DTO mh)
+        {
+            return MatHang_DAO.Instance.capNhatMH(maMH, mh);
+        }
     }
 }

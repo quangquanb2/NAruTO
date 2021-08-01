@@ -22,7 +22,7 @@ namespace NATO.DAO
             }
         }
 
-        string cs = @"Data Source=DESKTOP-ADHIDMQ\SQLEXPRESS;Initial Catalog=KLMQS;Integrated Security=True";
+        string cs = @"Data Source=TUAASNKHOOI\SQLEXPRESS03;Initial Catalog=test_QQ;Integrated Security=True";
 
         public List<DanhMuc_DTO> getAllDanhMuc()
         {
@@ -35,7 +35,7 @@ namespace NATO.DAO
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = con;
 
-                    cmd.CommandText = "SELECT * FROM DANHMUC";
+                    cmd.CommandText = "SELECT * FROM DANHMUC ORDER BY MaDanhMuc";
 
                     SqlDataReader rdr = cmd.ExecuteReader();
                     while (rdr.Read())
@@ -56,7 +56,6 @@ namespace NATO.DAO
                 return null;
             }
         }
-
 
         public bool themDanhMuc(DanhMuc_DTO dm)
         {
@@ -90,5 +89,40 @@ namespace NATO.DAO
                 return false;
             }
         } 
+
+        public DanhMuc_DTO getDanhMucByMaDM(string maDM)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(cs))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = con;
+                    cmd.CommandText = "SELECT * FROM DANHMUC WHERE MaDanhMuc = @mdm";
+                    cmd.Parameters.Add("@mdm", SqlDbType.NVarChar).Value = maDM;
+                    SqlDataReader drd = cmd.ExecuteReader();
+
+                    while (drd.Read())
+                    {
+                        DanhMuc_DTO dm = new DanhMuc_DTO();
+                        dm.MaDM = drd["MaDanhMuc"].ToString();
+                        dm.TenDM = drd["TenDanhMuc"].ToString();
+                        dm.MoTa = drd["MoTa"].ToString();
+
+                        return dm;
+                    }
+                    return null;
+                }
+            } catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+        }
+
+        
     }
+
+    
 }
